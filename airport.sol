@@ -9,12 +9,7 @@ import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 contract PayGateway is Ownable {
     using SafeERC20 for IERC20;
 
-    address public immutable koge;
-
-    constructor(address _koge, address _owner) {
-        koge = _koge;
-        transferOwnership(_owner);
-    }
+    address public immutable koge = 0xe6DF05CE8C8301223373CF5B969AFCb1498c5528;
 
     function withdrawErc20(address token) public onlyOwner {
         IERC20(token).safeTransfer(
